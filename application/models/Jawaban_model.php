@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jawaban_model extends Ci_Model {
 
-  public function Ambil() {
+  function ambil() {
      $data = $this->db->query('SELECT * FROM tb_jawaban');
       return $data->result_array();
   }
@@ -13,20 +13,32 @@ class Jawaban_model extends Ci_Model {
     return $res;
   }
 
-  public function Edit($id)
+  public function getJawabanById($id)
   {
-    $data = $this->db->query("SELECT * FROM tb_jawaban WHERE id = $id");
-    return $data->result_array();
-
+    $data = $this->db->get_where('tb_jawaban', ['id' => $id])->row_array();
+    return $data;
   }
 
-  public function Hapus($table,$where){
-    return $this->db->delete($table,$where);
+   function Update($where,$data,$table)
+  {
+    $this->db->where($where);
+    $this->db->update($table,$data);
   }
 
+  function Hapus($where,$table){
+    $this->db->where($where);
+    $this->db->delete($table);
+  }
+
+
+  // public function tampil_data()
+  // {
+  //   return $this->db->get('tb_soal');
+  // }
   public function AmbilJawaban($kode = 0) {
     $data = $this->db->query("select * from soal where id = '$kode'")->result_array();
     return $data[0]['kunci'];
   }
 
 }
+?>

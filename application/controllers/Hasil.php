@@ -5,7 +5,7 @@ class Hasil extends CI_Controller {
     function __construct()
     {
         parent::__construct();              
-        $this->load->model('hasil_model');
+        $this->load->model('Hasil_model');
 
          if($this->session->userdata('role_id') != 1){
             redirect('auth');
@@ -16,7 +16,7 @@ class Hasil extends CI_Controller {
     public function index()
     {
         $data['title'] = 'Hasil';
-        $data['ambil'] = $this->hasil_model->ambil();
+        $data['ambil'] = $this->Hasil_model->ambil();
         $data['name'] = $this->session->userdata('name');
     
         // $data['soal'] = $this->soal_model->soal();

@@ -11,10 +11,9 @@
                     <tr>
                       <th class="text-center" scope="" width="6%">No</th>
                       <th scope="">Nama</th>
-                      <th scope="" width="11%">Jumlah Benar</th>
-                      <th scope="" width="10%">Jumlah Salah</th>
+                      <th scope="">NIS</th>
                       <th scope="">Nilai</th>
-                      <th scope="" width="20%">Aksi</th>
+                      <th scope="">Detail</th>
                     </tr>
                   </thead>
                   
@@ -25,12 +24,10 @@
                     <tr>
                       <td class="text-center"><?= $i ?></td>
                       <td class="text-center"><?= $h['nama'] ?></td>
-                      <td class="text-center"><?= $h['jumlah_benar'] ?></td>
-                      <td class="text-center"><?= $h['jumlah_salah'] ?></td>
+                      <td class="text-center"><?= $h['nis'] ?></td>
                       <td class="text-center"><?= $h['nilai'] ?></td>
                       <td class="text-center">
-                      <a href="<?= base_url('user/edit/').$h['id'] ?>" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Edit</a>
-                      <a href="" class="btn btn-danger">Delete</a>
+                      <a href="<?= base_url('user/edit/').$h['id'] ?>" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Detail</a>
                       </td>
                     </tr>
                     <?php $i++; 

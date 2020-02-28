@@ -7,11 +7,12 @@
         </div>
         <br>
           <div class="login-box-body">
-          <h4><b>Selamat Datang di Halaman Admin</b></h4>
-          <p>Admin dapat mengelola data dan mengedit soal yang diujikan, mengubah lama waktu ujian, serta melihat hasil tes ujian
+          <h4><b>Selamat Datang, <?= $name?></b></h4>
+          <p>Anda dapat mengelola data dan mengedit soal yang diujikan, mengubah lama waktu ujian, serta melihat hasil tes ujian
           </p>
  </div>
         <!-- /.container-fluid -->
 
       </div>
+    </div>
 

@@ -7,8 +7,8 @@ class Soal extends CI_Controller {
         parent::__construct();              
         $this->load->model('Soal_model');
 
-         if($this->session->userdata('role_id') != 1){
-            redirect('auth');
+         if($this->session->userdata('role_id') == 2){
+            redirect('user');
     }
     
 }
@@ -41,19 +41,21 @@ class Soal extends CI_Controller {
         $where = array(
             'id' => $id);
 
-        $this->Soal_model->update_data($where,$data,'tb_soal');
+        $this->Soal_model->Update($where,$data,'tb_soal');
+        $this->session->set_flashdata('message', '<script>swal("Success!", "Berhasil Ubah Data Soal!", "success");</script>');
         redirect ('soal/index');
     }
 
-    public function edit ($id)
+    public function edit($id)
     {
 
         $data['title'] = 'Soal';
 
         $data['name'] = $this->session->userdata('name');
         // $data['soal'] = $this->soal_model->Edit();
-        $data['ambilsoal'] = $this->Soal_model->Edit($id);
-        $data['detail'] = $data['ambilsoal']['soal'];
+        $data['idsoal'] = $this->Soal_model->getSoalById($id);
+
+        $data['detailsoal'] = $data['idsoal']['soal'];
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -61,9 +63,12 @@ class Soal extends CI_Controller {
         $this->load->view('templates/footer', $data);
     }
 
-    public function hapus ()
+    public function hapus($id)
     {
-
+        $where = array('id' => $id);
+        $this->Soal_model->Hapus($where,'tb_soal');
+        $this->session->set_flashdata('message', '<script>swal("Success!", "Berhasil Hapus Data Soal!", "success");</script>');
+        redirect('soal/index');
     }
 
 }

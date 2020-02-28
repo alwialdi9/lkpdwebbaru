@@ -13,20 +13,21 @@ class Soal_model extends Ci_Model {
     return $res;
   }
 
-  public function Edit($id)
+  public function getSoalById($id)
   {
-    $data = $this->db->query("SELECT * FROM tb_soal WHERE id = $id");
-    return $data->result_array();
+    $data = $this->db->get_where('tb_soal', ['id' => $id])->row_array();
+    return $data;
   }
 
-   function Update($id)
+   function Update($where,$data,$table)
   {
-    $this->db->where($id);
-    $this->db->update($id);
+    $this->db->where($where);
+    $this->db->update($table,$data);
   }
 
-  function Hapus($table,$where){
-    return $this->db->delete($table,$where);
+  function Hapus($where,$table){
+    $this->db->where($where);
+    $this->db->delete($table);
   }
 
 
@@ -40,3 +41,4 @@ class Soal_model extends Ci_Model {
   }
 
 }
+?>

@@ -10,9 +10,13 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+      <li class="nav-item <?php
+      if($title == 'Admin'){
+        echo "active";
+      }
+      ?>">
+        <a class="nav-link" href="<?= base_url('admin')?>">
+          <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -25,23 +29,33 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu Siswa-->
-      <li class="nav-item">
+      <li class="nav-item <?php
+      if($title == 'Soal' || $title == 'Jawaban' || $title == 'Hasil'){
+        echo "active";
+      }
+      ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-school"></i>
+          <i class="fas fa-fw fa-school"></i>
           <span>Siswa</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+          <div class="bg-white collapse-inner rounded">
+            <a class="collapse-item" href="<?= base_url('siswa') ?>">Data Siswa</a>
             <a class="collapse-item" href="<?= base_url('soal') ?>">Soal</a>
             <a class="collapse-item" href="<?= base_url('jawaban') ?>">Jawaban</a>
             <a class="collapse-item" href="<?= base_url('hasil') ?>">Hasil Ujian</a>
           </div>
         </div>
       </li>
+      <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Waktu Ujian -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+      <li class="nav-item <?php
+      if($title == 'Waktu'){
+        echo "active";
+      }
+      ?>">
+        <a class="nav-link" href="<?= base_url('admin/waktu') ?>">
           <i class="fas fa-fw fa-stopwatch"></i>
           <span>Waktu Ujian</span></a>
       </li>

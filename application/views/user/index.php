@@ -1,28 +1,20 @@
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">Soal LKPD <br>Berbasis WEB</h1>
+      <h3 class="mb-5">
+        <em>Hai, <?= $name ?></em><br>
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
-
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                <img src="<?= base_url('assets/img/profile/') . $tb_user['image']; ?>" class="card-img">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $tb_user['name']; ?></h5>
-                    <p class="card-text"><?= $tb_user['email']; ?></p>
-                    <p class="card-text"><small class="text-muted"><?= date('d F Y', $tb_user['date_created']); ?></small></p>
-                </div>
-                </div>
-            </div>
-            </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      
+        <?php
+        if ($this->session->has_userdata('selesai') == true) {
+          echo "<em>Anda sudah mengerjakan soal LKPD</em>
+      </h3>
+      <a class='btn btn-primary btn-xl js-scroll-trigger' href=".base_url('auth/logout').">Keluar</a>";
+        }else{
+          echo "<em>Tekan Tombol Mulai Jika Sudah Siap Mengerjakan</em>
+      </h3>
+      <a class='btn btn-primary btn-xl js-scroll-trigger' href=". base_url('soaluser').">Mulai!!</a>";
+        }
+        ?>
+    </div>
+    <div class="overlay"></div>
+  </header>
