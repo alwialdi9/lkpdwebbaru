@@ -41,4 +41,38 @@ class Siswa extends CI_Controller
         }
         echo json_encode($arr);
     }
+
+    public function delete()
+    {
+        $this->Siswa_model->delete();
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function store()
+    {
+        $data = array(
+            'name' => htmlspecialchars($this->input->post('nama')),
+            'nis' => htmlspecialchars($this->input->post('nis')),
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            'role_id' => 2,
+            'date_created' => time(),
+            'image' => 'default.jpg',
+            );
+         
+        $status = false;
+ 
+        $id = $this->input->post('id');
+ 
+        if($id){
+           $update = $this->Siswa_model->update($data);
+           $status = true;
+        }else{
+           $id = $this->Siswa_model->addSiswa($data);
+           $status = true;
+        }
+ 
+        $data = $this->Siswa_model->getSiswaById($id);
+ 
+        echo json_encode(array("status" => $status , 'data' => $data));
+    }
 }

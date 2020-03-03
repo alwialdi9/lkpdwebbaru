@@ -25,6 +25,9 @@
 
                 <div class="form-group">
                   <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Alamat Email (Optional)" value="<?= set_value('email'); ?>">
+                  <small id="waktu" class="form-text text-muted ml-3">
+                    Admin Wajib mengisi email
+                  </small>
                   <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group row">

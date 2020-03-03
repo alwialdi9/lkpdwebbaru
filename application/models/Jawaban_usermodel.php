@@ -72,6 +72,7 @@ class Jawaban_usermodel extends Ci_Model {
 		'nama' => $this->input->post('nama'),
 		'nis' => $this->input->post('nis'),
 		'nilai' => $nilaiakhir,
+		'date' => date("Y-m-d H:i:s"),
 		'jawaban_1' => $this->input->post('1'),
 		'jawaban_2' => $this->input->post('2'),
 		'jawaban_3' => $this->input->post('3'),

@@ -1,82 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
 
-    <meta property="og:image" content="http://themepixels.me/dashforge/img/dashforge-social.png">
-    <meta property="og:image:secure_url" content="http://themepixels.me/dashforge/img/dashforge-social.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="600">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Meta -->
-    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
-    <meta name="author" content="ThemePixels">
+  <meta property="og:image" content="http://themepixels.me/dashforge/img/dashforge-social.png">
+  <meta property="og:image:secure_url" content="http://themepixels.me/dashforge/img/dashforge-social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
 
-    <!-- Favicon -->
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/') ?>assets/img/favicon.png"> -->
+  <!-- Meta -->
+  <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+  <meta name="author" content="ThemePixels">
 
-    <title><?= $title?></title>
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/') ?>assets/img/favicon.png"> -->
 
-    <!-- vendor css -->
-    <link href="<?= base_url('assets/') ?>lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/') ?>lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/') ?>lib/jqvmap/jqvmap.min.css" rel="stylesheet">
+  <title><?= $title ?></title>
 
-    <!-- DashForge CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/') ?>assets/css/dashforge.css">
-    <link rel="stylesheet" href="<?= base_url('assets/') ?>assets/css/dashforge.dashboard.css">
+  <!-- vendor css -->
+  <link href="<?= base_url('assets/') ?>lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="<?= base_url('assets/') ?>lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="<?= base_url('assets/') ?>lib/jqvmap/jqvmap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="<?= base_url('assets/') ?>simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <script src="<?= base_url('assets/') ?>lib/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('assets/') ?>lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DashForge CSS -->
+  <link rel="stylesheet" href="<?= base_url('assets/') ?>assets/css/dashforge.css">
+  <link rel="stylesheet" href="<?= base_url('assets/') ?>assets/css/dashforge.dashboard.css">
 
-    <!-- Custom CSS -->
-    <link href="<?= base_url('assets/') ?>assets/css/stylish-portfolio.min.css" rel="stylesheet">
-    <script src="<?= base_url('assets/') ?>js/sweetalert.min.js"></script>
-    <style>
-      #timer_place{
-        margin:0 auto;
-        text-align:center;
-      }
-      #timer{
-        padding:7px;
-        font-size:2em;
-        font-weight:bolder;
-      }
-    </style>
+  <link href="<?= base_url('assets/') ?>css/font.css" rel="stylesheet" type="text/css">
+  <link href="<?= base_url('assets/') ?>simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <script src="<?= base_url('assets/') ?>lib/jquery/jquery.min.js"></script>
+  <script src="<?= base_url('assets/') ?>lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            document.getElementById('selesai').disabled = true;
-            $('.selesai').hide();
+  <!-- Custom CSS -->
+  <link href="<?= base_url('assets/') ?>assets/css/stylish-portfolio.min.css" rel="stylesheet">
+  <script src="<?= base_url('assets/') ?>js/sweetalert.min.js"></script>
+  <style>
+    #timer_place {
+      margin: 0 auto;
+      text-align: center;
+    }
 
-            $('#customControlAutosizing').change(function() {
-                document.getElementById("selesai").disabled = false;
-                $('.selesai').show(1100);
-            });
+    #timer {
+      padding: 7px;
+      font-size: 2em;
+      font-weight: bolder;
+    }
 
-            <?php
-            $a=1;
-            $sintax = $this->db->query("SELECT * FROM tb_jawaban");
-            foreach ($sintax->result_array() as $e):?>
+    #box {
+      margin: auto;
+      width: 100%;
+      height: 400px;
+      border: 3px solid green;
+      padding: 10px;
+    }
 
-                $('#customRadio<?=$a?>').change(function() {
-                var element = document.getElementById("no<?=$e['pertanyaan_id']?>");
-                element.classList.remove("complete");
-                element.classList.add("active");
-            });
+    #div1,
+    #div2,
+    #div3,
+    #div4,
+    #div5,
+    #div6 {
+      width: 400px;
+      height: 300px;
+      border: 1px solid black;
+    }
+  </style>
 
-                <?php
-            $a++;
-        endforeach;
-            ?>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // document.getElementById('selesai').disabled = true;
+      // $('.selesai').hide();
+
+      // $('#customControlAutosizing').change(function() {
+      //   document.getElementById("selesai").disabled = false;
+      //   $('.selesai').show(1100);
+      // });
+
+      <?php
+      $a = 1;
+      $sintax = $this->db->query("SELECT * FROM tb_jawaban");
+      foreach ($sintax->result_array() as $e) : ?>
+
+        $('#customRadio<?= $a ?>').change(function() {
+          var element = document.getElementById("no<?= $e['pertanyaan_id'] ?>");
+          // element.classList.remove("complete");
+          element.classList.add("active");
         });
-    </script>
 
-  </head>
-  <body>
+      <?php
+        $a++;
+      endforeach;
+      ?>
+    });
+  </script>
+
+</head>
+
+<body>

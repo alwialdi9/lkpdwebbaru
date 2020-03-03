@@ -21,6 +21,7 @@ class Admin extends CI_Controller
         $data['title'] = 'Admin';
         $data['admin'] = $this->db->get_where('tb_user', ['nis' => $this->session->userdata('nis')])->row_array();
 
+        $data['dataadmin'] = $this->Admin_model->getAdmin();
         $data['name'] = $data['admin']['name'];
         
         $this->load->view('templates/header', $data);
@@ -66,4 +67,59 @@ class Admin extends CI_Controller
         $this->load->view('admin/waktu', $data);
         $this->load->view('templates/footer', $data);
     }
+
+    public function getAdminById()
+    {
+        $id = $this->input->post('id');
+         
+        $data = $this->Admin_model->getAdminById($id);
+          
+        $arr = array('success' => false, 'data' => '');
+        if($data){
+        $arr = array('success' => true, 'data' => $data);
+        }
+        echo json_encode($arr);
+    }
+
+    public function delete()
+    {
+        $this->Admin_model->delete();
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function store()
+    {
+        if (strtolower($this->input->post('role')) == 'admin') {
+            $role = 1;
+        }else{
+            $role = 2;
+        }
+        
+        $data = array(
+            'name' => htmlspecialchars($this->input->post('nama')),
+            'email' => htmlspecialchars($this->input->post('email')),
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            'role_id' => $role,
+            'date_created' => time(),
+            'image' => 'default.jpg',
+            );
+         
+        $status = false;
+ 
+        $id = $this->input->post('id');
+ 
+        if($id){
+           $update = $this->Admin_model->update($data);
+           $status = true;
+        }else{
+           $id = $this->Admin_model->addAdmin($data);
+           $status = true;
+        }
+ 
+        $data = $this->Admin_model->getAdminById($id);
+ 
+        echo json_encode(array("status" => $status , 'data' => $data));
+    }
+
+
 }

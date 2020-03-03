@@ -17,7 +17,7 @@
       ?>">
         <a class="nav-link" href="<?= base_url('admin')?>">
           <i class="fas fa-fw fa-home"></i>
-          <span>Dashboard</span></a>
+          <span>Data Admin</span></a>
       </li>
 
       <!-- Divider -->

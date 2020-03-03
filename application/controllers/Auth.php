@@ -83,7 +83,7 @@ class Auth extends CI_Controller
                     }
 
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi Salah!</div>');
                     redirect('auth');
                 }
         } else {
@@ -133,10 +133,11 @@ class Auth extends CI_Controller
             'required' => 'Harap isikan nama anda!',
             'trim' => 'Harap isikan nama anda!'
         ]);
-        $this->form_validation->set_rules('nis', 'Nis', 'required|trim|numeric',[
-            'required' => 'Harap isikan nama anda!',
-            'trim' => 'Harap isikan nama anda!',
-            'numeric' => 'Harap diisi hanya dengan angka'
+        $this->form_validation->set_rules('nis', 'Nis', 'required|trim|numeric|is_unique[tb_user.nis]',[
+            'required' => 'Harap isikan NIS anda!',
+            'trim' => 'Harap isikan NIS anda!',
+            'numeric' => 'Harap diisi hanya dengan angka',
+            'is_unique' => 'NIS sudah terdaftar',
         ]);
         $this->form_validation->set_rules('email', 'Email', 'valid_email|is_unique[tb_user.email]', [
             'is_unique' => 'Email sudah diregistrasi',

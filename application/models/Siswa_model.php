@@ -16,4 +16,23 @@ class Siswa_model extends Ci_Model {
   
         return $query->row();
     }
+
+    public function addSiswa($data){
+      $this->db->insert('tb_user',$data);
+      return $this->db->insert_id();
+    }
+
+    public function update($data)
+    {
+      $where = array('id' => $this->input->post('id'));
+      $this->db->update('tb_user', $data, $where);
+      return $this->db->affected_rows();
+    }
+
+    public function delete()
+    {
+        $id = $this->input->post('id');
+        $this->db->where('id', $id);
+        $this->db->delete('tb_user');
+    }
 }

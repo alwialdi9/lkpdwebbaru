@@ -31,17 +31,17 @@
                     </tr>
                   </thead>
                   
-                  <tbody>
+                  <tbody id="tbodysiswa">
                     <?php 
                     $i = 1;
                     foreach ($datasiswa as $s) : ?>
-                    <tr>
+                    <tr id="id_<?=$s['id'] ?>">
                       <td class="text-center"><?= $i ?></td>
                       <td><?= $s['name'] ?></td>
                       <td><?= $s['nis'] ?></td>
                       <td class="text-center">
                       <a href="#" class="btn btn-info mb-3" id="edituser" data-id="<?= $s['id'] ?>" data-toggle="tooltip">Edit</a>
-                      <a href="#" class="btn btn-danger mb-3">Delete</a>
+                      <a href="#" data-id="<?= $s['id'] ?>" data-toggle="tooltip" class="btn btn-danger mb-3" id="delete-user" >Delete</a>
                       </td>
                     </tr>
                     <?php $i++; 
@@ -93,6 +93,7 @@
     </div>
 
     <script type="text/javascript">
+      $(document).ready(function () {
       $('#addData').on('click', function() {
         $('#saveBtn').val("create-product");
         $('#saveBtn').html("Buat Akun");
@@ -130,5 +131,73 @@
                console.log('Error:', data);
             }
          });
-    })
+    });
+
+      $('#saveBtn').click(function (e) {
+        e.preventDefault();
+        $(this).html('Sending..');
+
+        $.ajax({
+          data: new FormData($("#siswaForm")[0]),
+          url: "<?= base_url('siswa')?>" + "/store",
+          type: "POST",
+          contentType: false,
+          cache: false,
+          processData: false,
+          dataType: 'json',
+          success: function (data) {
+
+              $('#siswaForm').trigger("reset");
+              $('#saveBtn').html('Simpan Data');
+              $('#exampleModalCenter').modal('hide');
+              // table.draw();
+              $( "#dataTable" ).load( "<?= base_url('siswa') ?> #dataTable" );
+              swal("Success!", "Success Insert Data!", "success");
+          },
+          error: function (data) {
+              console.log('Error:', data);
+              $('#saveBtn').html('Save Changes');
+          }
+      });
+    });
+
+      $('body').on('click', '#delete-user', function () {
+ 
+         var id = $(this).data("id");
+
+         swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this data!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              $.ajax({
+               type: "Post",
+               url: "<?= base_url('siswa')?>" + "/delete",
+               data: {
+                  id: id
+               },
+               dataType: "json",
+               success: function (data) {
+                  $("#id_" + id).remove();
+                  $( "#dataTable" ).load( "<?= base_url('siswa') ?> #dataTable" );
+               },
+               error: function (data) {
+                  console.log('Error:', data);
+               }
+            });
+              swal("Poof! Your data has been deleted!", {
+                icon: "success",
+              });
+            } else {
+              swal("Your data is safe!");
+            }
+          });
+      });
+
+
+  });
     </script>
