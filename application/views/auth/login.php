@@ -32,10 +32,10 @@
                       Login
                     </button>
                   </form>
-                  <div class="text-center mt-3">
+                  <!-- <div class="text-center mt-3">
                     <a class="large" href="<?= base_url('auth/registration'); ?>">Buat Akun</a>
-                  </div>
-                  <div class="text-center">
+                  </div> -->
+                  <div class="text-center my-2">
                     <a class="large form" href="#" id="admin">Admin</a>
                   </div>
                 </div>
@@ -79,10 +79,10 @@
                       Login
                     </button>
                   </form>
-                  <div class="text-center mt-3">
+                  <!-- <div class="text-center mt-3">
                     <a class="large" href="<?= base_url('auth/registration'); ?>">Buat Akun</a>
-                  </div>
-                  <div class="text-center">
+                  </div> -->
+                  <div class="text-center my-3">
                     <a class="large form" href="#" id="siswa">Siswa</a>
                   </div>
                 </div>

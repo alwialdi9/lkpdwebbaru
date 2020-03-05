@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Jawaban_usermodel extends Ci_Model {
 
 	public function save(){
+		$gambar = 0;
+
+		
 		$nilai = 0;
 
 		if ($this->input->post('1') == 2) {
@@ -66,7 +69,27 @@ class Jawaban_usermodel extends Ci_Model {
 			$nilai = $nilai+10;
 		}
 
-		$nilaiakhir = $nilai*2/3;
+		if ($this->input->post('gambar1') == 'rawa.jpg') {
+			$nilai = $nilai+10;
+		}
+
+		if ($this->input->post('gambar2') == 'padangrumput.jpg') {
+			$nilai = $nilai+10;
+		}
+
+		if ($this->input->post('gambar3') == 'langit.jpg') {
+			$nilai = $nilai+10;
+		}
+
+		if ($this->input->post('gambar4') == 'laut.jpg') {
+			$nilai = $nilai+10;
+		}
+
+		if ($this->input->post('gambar5') == 'sawah.jpg') {
+			$nilai = $nilai+10;
+		}
+
+		$nilaiakhir = $nilai/2;
 
 		$data = [
 		'nama' => $this->input->post('nama'),
@@ -92,4 +115,5 @@ class Jawaban_usermodel extends Ci_Model {
 		
 		return $this->db->insert('tb_hasil',$data);
 	}
+
 }

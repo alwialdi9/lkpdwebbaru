@@ -87,6 +87,7 @@ class Admin extends CI_Controller
         echo json_encode(array("status" => TRUE));
     }
 
+   
     public function store()
     {
         if (strtolower($this->input->post('role')) == 'admin') {

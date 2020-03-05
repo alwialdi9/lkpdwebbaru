@@ -44,11 +44,12 @@
                 </div>
               </div>
               <div class="col">
-                <div id="div2">
-
+                <div id="div2" class="divgambar">
+                <img src="" class="img-gambar" data-id="div2" alt="" width="400" height="300">
+                <input type="hidden" id="gambardiv2" name="gambar1">
 
                 </div>
-                <a href="#" class="btn btn-primary float-right mt-3" id="pilih" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div2">Pilih Habitat</a>
+                <a href="#" class="btn btn-primary float-right mt-3 btn-gambar" id="pilih" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div2">Pilih Habitat</a>
               </div>
             </div>
           </div>
@@ -61,10 +62,12 @@
                 </div>
               </div>
               <div class="col">
-                <div id="div3">
+                <div id="div3" class="divgambar">
+                <img src="" class="img-gambar" data-id="div3" alt="" width="400" height="300">
+                <input type="hidden" id="gambardiv3" name="gambar2">
 
                 </div>
-                <a href="#" class="btn btn-primary float-right mt-3" id="pilih2" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div3">Pilih Habitat</a>
+                <a href="#" class="btn btn-primary float-right mt-3 btn-gambar" id="pilih2" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div3">Pilih Habitat</a>
               </div>
             </div>
           </div>
@@ -77,10 +80,12 @@
                 </div>
               </div>
               <div class="col">
-                <div id="div4">
+                <div id="div4" class="divgambar">
+                <img src="" class="img-gambar" data-id="div4" alt="" width="400" height="300">
+                <input type="hidden" id="gambardiv4" name="gambar3">
 
                 </div>
-                <a href="#" class="btn btn-primary float-right mt-3" id="pilih3" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div4">Pilih Habitat</a>
+                <a href="#" class="btn btn-primary float-right mt-3 btn-gambar" id="pilih3" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div4">Pilih Habitat</a>
               </div>
             </div>
           </div>
@@ -93,10 +98,12 @@
                 </div>
               </div>
               <div class="col">
-                <div id="div5">
+                <div id="div5" class="divgambar">
+                <img src="" class="img-gambar" data-id="div5" alt="" width="400" height="300">
+                <input type="hidden" id="gambardiv5" name="gambar4">
 
                 </div>
-                <a href="#" class="btn btn-primary float-right mt-3" id="pilih4" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div5">Pilih Habitat</a>
+                <a href="#" class="btn btn-primary float-right mt-3 btn-gambar" id="pilih4" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div5">Pilih Habitat</a>
               </div>
             </div>
           </div>
@@ -109,10 +116,12 @@
                 </div>
               </div>
               <div class="col">
-                <div id="div6">
+                <div id="div6" class="divgambar">
+                <img src="" class="img-gambar" data-id="div6" alt="" width="400" height="300">
+                <input type="hidden" id="gambardiv6" name="gambar5">
 
                 </div>
-                <a href="#" class="btn btn-primary float-right mt-3" id="pilih5" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div6">Pilih Habitat</a>
+                <a href="#" class="btn btn-primary float-right mt-3 btn-gambar" id="pilih5" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="div6">Pilih Habitat</a>
               </div>
             </div>
           </div>
@@ -139,16 +148,15 @@
       </div>
       <div class="modal-body">
         <div class="row ml-2">
-          <a href="#" id="langit" class="mx-auto"><img src="<?= base_url('assets') ?>/images/langit.jpg" class="rounded mb-3" alt="..." width="300" height="150"></a>
-          <a href="#" id="laut" class="mx-auto"><img src="<?= base_url('assets') ?>/images/laut.jpg" class="rounded mb-3" alt="..." width="300" height="150"></a>
-          <a href="#" id="padangrumput" class="mx-auto"><img src="<?= base_url('assets') ?>/images/padangrumput.jpg" class="rounded mb-3" alt="..." width="300" height="150"></a>
-          <a href="#" id="rawa" class="mx-auto"><img src="<?= base_url('assets') ?>/images/rawa.jpg" class="rounded mb-3" alt="..." width="300" height="150"></a>
-          <a href="#" id="sawah" class="mx-auto"><img src="<?= base_url('assets') ?>/images/sawah.jpg" class="rounded mb-3" alt="..." width="300" height="150"></a>
+          <a href="#" id="langit" class="mx-auto"><img src="<?= base_url('assets') ?>/images/langit.jpg" class="rounded mb-3 img-modal" alt="..." width="300" height="150"></a>
+          <a href="#" id="laut" class="mx-auto"><img src="<?= base_url('assets') ?>/images/laut.jpg" class="rounded mb-3 img-modal" alt="..." width="300" height="150"></a>
+          <a href="#" id="padangrumput" class="mx-auto"><img src="<?= base_url('assets') ?>/images/padangrumput.jpg" class="rounded mb-3 img-modal" alt="..." width="300" height="150"></a>
+          <a href="#" id="rawa" class="mx-auto"><img src="<?= base_url('assets') ?>/images/rawa.jpg" class="rounded mb-3 img-modal" alt="..." width="300" height="150"></a>
+          <a href="#" id="sawah" class="mx-auto"><img src="<?= base_url('assets') ?>/images/sawah.jpg" class="rounded mb-3 img-modal" alt="..." width="300" height="150"></a>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>
@@ -192,189 +200,32 @@
         });
     });
 
-    // script pilih gambar
-
-    $("#pilih").on("click", function() {
-      var id = $(this).attr('data-id');
-      console.log(id);
+    // script pilih gambarl
+    var id = '';
+    $('.btn-gambar').on("click", function(){
+     id = $(this).data('id');
+    });
 
       $("#langit").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/langit.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
+        $('.img-gambar[data-id='+id+']').attr('src', "<?= base_url('assets') ?>/images/langit.jpg");
+        $('#gambar'+id).val('langit.jpg');
       });
 
       $("#laut").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/laut.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
+        $('.img-gambar[data-id='+id+']').attr('src', "<?= base_url('assets') ?>/images/laut.jpg");
+        $('#gambar'+id).val('laut.jpg');
       });
-
       $("#rawa").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/rawa.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
+        $('.img-gambar[data-id='+id+']').attr('src', "<?= base_url('assets') ?>/images/rawa.jpg");
+        $('#gambar'+id).val('rawa.jpg');
       });
-
       $("#sawah").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/sawah.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
+        $('.img-gambar[data-id='+id+']').attr('src', "<?= base_url('assets') ?>/images/sawah.jpg");
+        $('#gambar'+id).val('sawah.jpg');
       });
-
       $("#padangrumput").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/padangrumput.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
+        $('.img-gambar[data-id='+id+']').attr('src', "<?= base_url('assets') ?>/images/padangrumput.jpg");
+        $('#gambar'+id).val('padangrumput.jpg');
       });
-    });
-
-    $("#pilih2").on("click", function() {
-      var pilih2 = $(this).data('id');
-      console.log(pilih2);
-
-      $("#langit").on("click", function() {
-        var img2 = document.getElementById("imgid");
-        var src2 = document.getElementById(pilih2);
-        console.log(src2);
-        if (img2) {
-          src2.removeChild(img2);
-        }
-        var x2 = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/langit.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src2.appendChild(x);
-
-      });
-
-      $("#laut").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(pilih2);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/laut.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
-      });
-
-      $("#rawa").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/rawa.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
-      });
-
-      $("#sawah").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/sawah.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
-      });
-
-      $("#padangrumput").on("click", function() {
-        var img = document.getElementById("imgid");
-        var src = document.getElementById(id);
-        if (img) {
-          src.removeChild(img);
-        }
-        var x = document.createElement("IMG");
-        x.setAttribute("src", "<?= base_url('assets') ?>/images/padangrumput.jpg");
-        x.setAttribute("id", "imgid");
-        x.setAttribute("width", "400");
-        x.setAttribute("height", "300");
-        x.setAttribute("alt", "..");
-
-        src.appendChild(x);
-
-      });
-    });
-
-
   })
 </script>

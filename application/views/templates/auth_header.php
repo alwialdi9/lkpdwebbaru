@@ -39,4 +39,4 @@
 
 </head>
 
-<body background="<?= base_url('assets/'); ?>img/ekosistem.jpg">
+<body background="<?= base_url('assets/'); ?>img/ekosistem.jpg" style="background-size: cover;">
